@@ -1,15 +1,11 @@
 package acetoys;
 
-import java.time.Duration;
-import java.util.*;
-
+import acetoys.pageobjects.StaticPages;
 import io.gatling.javaapi.core.*;
 import io.gatling.javaapi.http.*;
-import io.gatling.javaapi.jdbc.*;
 
 import static io.gatling.javaapi.core.CoreDsl.*;
 import static io.gatling.javaapi.http.HttpDsl.*;
-import static io.gatling.javaapi.jdbc.JdbcDsl.*;
 
 public class AceToysSimulation extends Simulation {
 
@@ -22,25 +18,11 @@ public class AceToysSimulation extends Simulation {
     .acceptLanguageHeader("en-GB,en;q=0.9");
 
   private ScenarioBuilder scn = scenario("AceToysSimulation")
-    .exec(
-      http("Load Home Page")
-        .get("/")
-              .check(status().is(200)) // Gatling does this automatically
-              .check(status().not(404), status().not(405))
-              .check(substring("<title>Ace Toys Online Shop</title>"))
-              .check(css("#_csrf", "content").saveAs("csrfToken"))
-    )
+    .exec(StaticPages.homepage)
     .pause(2)
-    .exec(
-      http("Load Our Story Page")
-        .get("/our-story")
-              .check(regex("was founded online in \\d{4}"))
-    )
+    .exec(StaticPages.ourStory)
     .pause(2)
-    .exec(
-      http("Load Get In Touch")
-        .get("/get-in-touch")
-    )
+    .exec(StaticPages.getInTouch)
     .pause(2)
     .exec(
       http("Load Products List Page - Category: All Products")
