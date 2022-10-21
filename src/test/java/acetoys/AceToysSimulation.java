@@ -25,6 +25,7 @@ public class AceToysSimulation extends Simulation {
     .exec(
       http("Load Home Page")
         .get("/")
+              .check(css("#_csrf", "content").saveAs("csrfToken"))
     )
     .pause(2)
     .exec(
@@ -85,9 +86,10 @@ public class AceToysSimulation extends Simulation {
     .exec(
       http("Login User")
         .post("/login")
-        .formParam("_csrf", "769af036-619a-4fb1-849e-382a3fb6518e")
+        .formParam("_csrf", "#{csrfToken}")
         .formParam("username", "user1")
         .formParam("password", "pass")
+              .check(css("#_csrf", "content").saveAs("csrfTokenLoggedIn"))
     )
     .pause(2)
     .exec(
@@ -113,7 +115,7 @@ public class AceToysSimulation extends Simulation {
     .exec(
       http("Logout")
         .post("/logout")
-        .formParam("_csrf", "37c6e82e-60bb-4f97-961a-59ca9321adb9")
+        .formParam("_csrf", "#{csrfTokenLoggedIn}")
     );
 
   {
