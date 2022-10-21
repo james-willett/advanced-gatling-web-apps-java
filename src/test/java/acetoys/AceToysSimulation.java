@@ -25,12 +25,16 @@ public class AceToysSimulation extends Simulation {
     .exec(
       http("Load Home Page")
         .get("/")
+              .check(status().is(200)) // Gatling does this automatically
+              .check(status().not(404), status().not(405))
+              .check(substring("<title>Ace Toys Online Shop</title>"))
               .check(css("#_csrf", "content").saveAs("csrfToken"))
     )
     .pause(2)
     .exec(
       http("Load Our Story Page")
         .get("/our-story")
+              .check(regex("was founded online in \\d{4}"))
     )
     .pause(2)
     .exec(
@@ -110,6 +114,7 @@ public class AceToysSimulation extends Simulation {
     .exec(
       http("Checkout")
         .get("/cart/checkout")
+              .check(substring("Your products are on their way to you now!!"))
     )
     .pause(2)
     .exec(
