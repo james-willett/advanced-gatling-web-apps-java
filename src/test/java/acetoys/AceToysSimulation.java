@@ -1,5 +1,6 @@
 package acetoys;
 
+import acetoys.pageobjects.Category;
 import acetoys.pageobjects.StaticPages;
 import io.gatling.javaapi.core.*;
 import io.gatling.javaapi.http.*;
@@ -24,20 +25,11 @@ public class AceToysSimulation extends Simulation {
     .pause(2)
     .exec(StaticPages.getInTouch)
     .pause(2)
-    .exec(
-      http("Load Products List Page - Category: All Products")
-        .get("/category/all")
-    )
+    .exec(Category.productListByCategory_AllProducts)
     .pause(2)
-    .exec(
-      http("Load Next Page of Products - Page 1")
-        .get("/category/all?page=1")
-    )
+    .exec(Category.loadSecondPageOfProducts)
     .pause(2)
-    .exec(
-      http("Load Next Page of Products - Page 2")
-        .get("/category/all?page=2")
-    )
+    .exec(Category.loadThirdPageOfProducts)
     .pause(2)
     .exec(
       http("Load Products Details Page - Product: Darts Board")
@@ -49,10 +41,7 @@ public class AceToysSimulation extends Simulation {
         .get("/cart/add/19")
     )
     .pause(2)
-    .exec(
-      http("Load Products List Page: Babies Toys")
-        .get("/category/babies-toys")
-    )
+    .exec(Category.productListByCategory_BabiesToys)
     .pause(2)
     .exec(
       http("Add Product to Cart: ProductId: 4")
