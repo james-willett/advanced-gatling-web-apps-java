@@ -22,6 +22,5 @@ public class Product {
             exec(
                     http("Add Product to Cart - Product Name: #{name}")
                             .get("/cart/add/#{id}")
-                            .check(substring("You have <span>1</span> products in your Basket"))
             );
 }
