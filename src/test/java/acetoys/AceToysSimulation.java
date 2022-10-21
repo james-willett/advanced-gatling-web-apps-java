@@ -1,5 +1,6 @@
 package acetoys;
 
+import acetoys.pageobjects.Cart;
 import acetoys.pageobjects.Category;
 import acetoys.pageobjects.Product;
 import acetoys.pageobjects.StaticPages;
@@ -42,10 +43,7 @@ public class AceToysSimulation extends Simulation {
     .pause(2)
     .exec(Product.addProductToCart_Product5)
     .pause(2)
-    .exec(
-      http("View Cart")
-        .get("/cart/view")
-    )
+    .exec(Cart.viewCart)
     .pause(2)
     .exec(
       http("Login User")
@@ -56,26 +54,13 @@ public class AceToysSimulation extends Simulation {
               .check(css("#_csrf", "content").saveAs("csrfTokenLoggedIn"))
     )
     .pause(2)
-    .exec(
-      http("Increase Product Quantity in Cart - Product Id: 19")
-        .get("/cart/add/19?cartPage=true")
-    )
+    .exec(Cart.increaseQuantityInCart)
     .pause(2)
-    .exec(
-      http("Increase Product Quantity in Cart - Product Id: 19")
-        .get("/cart/add/19?cartPage=true")
-    )
+    .exec(Cart.increaseQuantityInCart)
     .pause(2)
-    .exec(
-      http("Subtract Product Quantity in Cart - Product Id: 19")
-        .get("/cart/subtract/19")
-    )
+    .exec(Cart.decreaseQuantityInCart)
     .pause(2)
-    .exec(
-      http("Checkout")
-        .get("/cart/checkout")
-              .check(substring("Your products are on their way to you now!!"))
-    )
+    .exec(Cart.checkout)
     .pause(2)
     .exec(
       http("Logout")
