@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "name": "Vintage Minature Car",
+    "slug": "vintage-minature-car",
+    "description": "This little car is just so cute, and your baby is going to love driving it around on the floor!",
+    "categoryName": "Babies Toys",
+    "price": 24.99
+  },
+  {
+    "id": 2,
+    "name": "Wooden Baby Worm",
+    "slug": "wooden-baby-worm",
+    "description": "A multi-coloured baby worm that will help baby to learn about colours",
+    "categoryName": "Babies Toys",
+    "price": 13.99
+  },
+  {
+    "id": 3,
+    "name": "US Style Basketball",
+    "slug": "us-style-basketball",
+    "description": "Traditional NBA basketball that has been imported from the USA",
+    "categoryName": "Grown-ups Toys",
+    "price": 27.99
+  },
+  {
+    "id": 4,
+    "name": "Brown Teddy Bear",
+    "slug": "brown-teddy-bear",
+    "description": "Cute brown teddy bear that you can place on the windowsill for baby to stare at",
+    "categoryName": "Babies Toys",
+    "price": 29.99
+  },
+  {
+    "id": 5,
+    "name": "Coloured Building Blocks",
+    "slug": "coloured-building-blocks",
+    "description": "Selection of building blocks that come in a wide range of shapes and colours",
+    "categoryName": "Babies Toys",
+    "price": 34.99
+  },
+  {
+    "id": 6,
+    "name": "Doctors Play Kit",
+    "slug": "doctors-play-kit",
+    "description": "Get your child to start playing doctors and nurses with this fabulous toy medical kit",
+    "categoryName": "Kids Toys",
+    "price": 37.99
+  },
+  {
+    "id": 7,
+    "name": "Alphabet Letters",
+    "slug": "alphabet-letters",
+    "description": "Start baby on their journey to being able to spell properly, with these six letters from A to F",
+    "categoryName": "Babies Toys",
+    "price": 8.99
+  },
+  {
+    "id": 8,
+    "name": "Fake Donuts",
+    "slug": "fake-donuts",
+    "description": "Kids will have so much fun pranking their parents with these delicious looking but ultimately fake donuts",
+    "categoryName": "Kids Toys",
+    "price": 16.99
+  },
+  {
+    "id": 9,
+    "name": "Rabbit Model",
+    "slug": "rabbit-model",
+    "description": "A not all that realistic looking model of a rabbit, that kids will have fun constructing (and destroying...)",
+    "categoryName": "Babies Toys",
+    "price": 19.99
+  },
+  {
+    "id": 10,
+    "name": "PS4 Controller",
+    "slug": "ps4-controller",
+    "description": "Official controller for the Playstation 4. These break easily, so you can never have enough",
+    "categoryName": "Grown-ups Toys",
+    "price": 49.99
+  },
+  {
+    "id": 11,
+    "name": "Furry Toys",
+    "slug": "furry-toys",
+    "description": "Collection of furry toys that can sit on the shelf in the babys room and gather dust",
+    "categoryName": "Babies Toys",
+    "price": 38.99
+  },
+  {
+    "id": 12,
+    "name": "Hopscotch Kit",
+    "slug": "hopscotch-kit",
+    "description": "Draw a hopscotch kit on the ground outside your house, kids will have loads of fun with this",
+    "categoryName": "Kids Toys",
+    "price": 23.99
+  },
+  {
+    "id": 13,
+    "name": "VR Headset",
+    "slug": "vr-headset",
+    "description": "Escape from your boring life into the metaverse, where everything is just more fun.",
+    "categoryName": "Grown-ups Toys",
+    "price": 299.99
+  },
+  {
+    "id": 14,
+    "name": "Rubicks Cube",
+    "slug": "rubicks-cube",
+    "description": "The world famous rubicks cube. Bound to keep your kid amused for all of 2 minutes",
+    "categoryName": "Kids Toys",
+    "price": 18.99
+  },
+  {
+    "id": 15,
+    "name": "Scrabble Set",
+    "slug": "scrabble-set",
+    "description": "Get their spelling learning back on track with this fabulous Scrabble set",
+    "categoryName": "Kids Toys",
+    "price": 27.99
+  },
+  {
+    "id": 16,
+    "name": "Assorted Building Blocks",
+    "slug": "assorted-building-blocks",
+    "description": "Big selection of building blocks that will help baby develop her construction skills",
+    "categoryName": "Babies Toys",
+    "price": 19.99
+  },
+  {
+    "id": 17,
+    "name": "Flat screen TV",
+    "slug": "flat-screen-tv",
+    "description": "This TV comes from a presumably reputable brand, and will no doubt provide hours of entertainment",
+    "categoryName": "Grown-ups Toys",
+    "price": 999.99
+  },
+  {
+    "id": 18,
+    "name": "Xbox Controller",
+    "slug": "xbox-controller",
+    "description": "Get into some serious two player action with this official xbox controller",
+    "categoryName": "Grown-ups Toys",
+    "price": 49.99
+  },
+  {
+    "id": 19,
+    "name": "Darts Board",
+    "slug": "darts-board",
+    "description": "Get all your mates round for a few drinks and throw sharp objects at this darts board",
+    "categoryName": "Grown-ups Toys",
+    "price": 89.99
+  },
+  {
+    "id": 20,
+    "name": "Train Toy",
+    "slug": "train-toy",
+    "description": "A wooden train toy that you will no doubt tread on with bare feet at some point",
+    "categoryName": "Babies Toys",
+    "price": 18.99
+  },
+  {
+    "id": 21,
+    "name": "Playing Cards",
+    "slug": "playing-cards",
+    "description": "You will never be bored on holiday again as long as you have these playing cards",
+    "categoryName": "Kids Toys",
+    "price": 9.99
+  },
+  {
+    "id": 22,
+    "name": "Poker Set",
+    "slug": "poker-set",
+    "description": "Get the lads round for a fun night of gambling with this amazing poker set. Includes chips, cards and instructions.",
+    "categoryName": "Grown-ups Toys",
+    "price": 63.99
+  }
+]
