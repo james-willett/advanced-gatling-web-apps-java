@@ -1,9 +1,6 @@
 package acetoys;
 
-import acetoys.pageobjects.Cart;
-import acetoys.pageobjects.Category;
-import acetoys.pageobjects.Product;
-import acetoys.pageobjects.StaticPages;
+import acetoys.pageobjects.*;
 import io.gatling.javaapi.core.*;
 import io.gatling.javaapi.http.*;
 
@@ -27,7 +24,7 @@ public class AceToysSimulation extends Simulation {
     .pause(2)
     .exec(StaticPages.getInTouch)
     .pause(2)
-    .exec(Category.productListByCategory_AllProducts)
+    .exec(Category.productListByCategory)
     .pause(2)
     .exec(Category.loadSecondPageOfProducts)
     .pause(2)
@@ -37,7 +34,7 @@ public class AceToysSimulation extends Simulation {
     .pause(2)
     .exec(Product.addProductToCart_Product19)
     .pause(2)
-    .exec(Category.productListByCategory_BabiesToys)
+    .exec(Category.productListByCategory)
     .pause(2)
     .exec(Product.addProductToCart_Product4)
     .pause(2)
@@ -45,14 +42,7 @@ public class AceToysSimulation extends Simulation {
     .pause(2)
     .exec(Cart.viewCart)
     .pause(2)
-    .exec(
-      http("Login User")
-        .post("/login")
-        .formParam("_csrf", "#{csrfToken}")
-        .formParam("username", "user1")
-        .formParam("password", "pass")
-              .check(css("#_csrf", "content").saveAs("csrfTokenLoggedIn"))
-    )
+    .exec(Customer.login)
     .pause(2)
     .exec(Cart.increaseQuantityInCart)
     .pause(2)
@@ -62,11 +52,7 @@ public class AceToysSimulation extends Simulation {
     .pause(2)
     .exec(Cart.checkout)
     .pause(2)
-    .exec(
-      http("Logout")
-        .post("/logout")
-        .formParam("_csrf", "#{csrfTokenLoggedIn}")
-    );
+    .exec(Customer.logout);
 
   {
 	  setUp(scn.injectOpen(atOnceUsers(1))).protocols(httpProtocol);
