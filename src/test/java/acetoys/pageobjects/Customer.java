@@ -35,7 +35,8 @@ public class Customer {
                     .formParam("username", "#{userId}")
                     .formParam("password", "#{password}")
                     .check(css("#_csrf", "content").saveAs("csrfTokenLoggedIn"))
-    );
+    )
+                    .exec(session -> session.set("customerLoggedIn", true));
 
     public static ChainBuilder logout =
             randomSwitch().on(

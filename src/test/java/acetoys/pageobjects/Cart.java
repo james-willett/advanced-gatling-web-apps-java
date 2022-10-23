@@ -8,9 +8,12 @@ import static io.gatling.javaapi.http.HttpDsl.*;
 public class Cart {
 
     public static ChainBuilder viewCart =
-            exec(
+            doIf(session -> !session.getBoolean("customerLoggedIn"))
+                    .then(exec(Customer.login))
+                    .exec(
                     http("View Cart")
                             .get("/cart/view")
+                            .check(css("#CategoryHeader").is("Cart Overview"))
             );
 
     public static ChainBuilder increaseQuantityInCart =
