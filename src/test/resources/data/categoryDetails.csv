@@ -1,5 +1,5 @@
-categoryName,categorySlug
-All Products,all
-Babies Toys,babies-toys
-Kids Toys,kids-toys
-Grown-ups Toys,grown-ups-toys
+categoryName,categorySlug,categoryPages
+All Products,all,3
+Babies Toys,babies-toys,1
+Kids Toys,kids-toys,1
+Grown-ups Toys,grown-ups-toys,1

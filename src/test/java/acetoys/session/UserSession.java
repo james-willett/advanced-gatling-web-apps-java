@@ -9,5 +9,6 @@ public class UserSession {
 
     public static ChainBuilder initSession =
             exec(flushCookieJar())
+                    .exec(session -> session.set("productsListPageNumber", 1))
                     .exec(session -> session.set("customerLoggedIn", false));
 }
