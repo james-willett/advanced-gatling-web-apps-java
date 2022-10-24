@@ -2,6 +2,7 @@ package acetoys;
 
 import acetoys.pageobjects.*;
 import acetoys.session.UserSession;
+import acetoys.simulation.TestScenario;
 import acetoys.simulation.UserJourney;
 import io.gatling.javaapi.core.*;
 import io.gatling.javaapi.http.*;
@@ -19,10 +20,8 @@ public class AceToysSimulation extends Simulation {
     .acceptEncodingHeader("gzip, deflate")
     .acceptLanguageHeader("en-GB,en;q=0.9");
 
-  private ScenarioBuilder scn = scenario("AceToysSimulation")
-          .exec(UserJourney.completePurchase);
-
   {
-	  setUp(scn.injectOpen(atOnceUsers(1))).protocols(httpProtocol);
+	  setUp(TestScenario.highPurchaseLoadTest
+              .injectOpen(atOnceUsers(10))).protocols(httpProtocol);
   }
 }
