@@ -2,6 +2,7 @@ package acetoys;
 
 import acetoys.pageobjects.*;
 import acetoys.session.UserSession;
+import acetoys.simulation.UserJourney;
 import io.gatling.javaapi.core.*;
 import io.gatling.javaapi.http.*;
 
@@ -19,36 +20,7 @@ public class AceToysSimulation extends Simulation {
     .acceptLanguageHeader("en-GB,en;q=0.9");
 
   private ScenarioBuilder scn = scenario("AceToysSimulation")
-          .exec(UserSession.initSession)
-    .exec(StaticPages.homepage)
-    .pause(2)
-    .exec(StaticPages.ourStory)
-    .pause(2)
-    .exec(StaticPages.getInTouch)
-    .pause(2)
-    .exec(Category.productListByCategory)
-    .pause(2)
-    .exec(Category.cyclePagesOfProducts)
-    .pause(2)
-    .exec(Product.loadProductDetailsPage)
-    .pause(2)
-    .exec(Product.addProductToCart)
-    .pause(2)
-    .exec(Category.productListByCategory)
-    .pause(2)
-    .exec(Product.addProductToCart)
-    .pause(2)
-    .exec(Cart.viewCart)
-    .pause(2)
-    .exec(Cart.increaseQuantityInCart)
-    .pause(2)
-    .exec(Cart.increaseQuantityInCart)
-    .pause(2)
-    .exec(Cart.decreaseQuantityInCart)
-    .pause(2)
-    .exec(Cart.checkout)
-    .pause(2)
-    .exec(Customer.logout);
+          .exec(UserJourney.completePurchase);
 
   {
 	  setUp(scn.injectOpen(atOnceUsers(1))).protocols(httpProtocol);
