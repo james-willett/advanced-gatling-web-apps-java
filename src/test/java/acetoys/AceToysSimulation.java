@@ -2,6 +2,7 @@ package acetoys;
 
 import acetoys.pageobjects.*;
 import acetoys.session.UserSession;
+import acetoys.simulation.TestPopulation;
 import acetoys.simulation.TestScenario;
 import acetoys.simulation.UserJourney;
 import io.gatling.javaapi.core.*;
@@ -21,7 +22,6 @@ public class AceToysSimulation extends Simulation {
     .acceptLanguageHeader("en-GB,en;q=0.9");
 
   {
-	  setUp(TestScenario.highPurchaseLoadTest
-              .injectOpen(atOnceUsers(10))).protocols(httpProtocol);
+	  setUp(TestPopulation.complexInjection).protocols(httpProtocol);
   }
 }
