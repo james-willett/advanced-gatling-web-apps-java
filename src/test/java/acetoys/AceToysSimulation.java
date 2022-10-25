@@ -38,12 +38,7 @@ public class AceToysSimulation extends Simulation {
       } else if (TEST_TYPE.equals("CLOSED_MODEL")) {
           setUp(TestPopulation.closedModel).protocols(httpProtocol);
       } else {
-          setUp(TestPopulation.instantUsers).protocols(httpProtocol)
-                  .assertions(
-                          global().responseTime().mean().lt(3),
-                          global().successfulRequests().percent().gt(99.0),
-                          forAll().responseTime().max().lt(5)
-                  );
+          setUp(TestPopulation.instantUsers).protocols(httpProtocol);
       }
   }
 
