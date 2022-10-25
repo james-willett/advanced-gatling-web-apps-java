@@ -25,7 +25,11 @@ public class AceToysSimulation extends Simulation {
 
   {
       if (TEST_TYPE == "INSTANT_USERS") {
-          setUp(TestPopulation.instantUsers).protocols(httpProtocol);
+          setUp(TestPopulation.instantUsers).protocols(httpProtocol)
+                  .assertions(
+                          global().responseTime().max().lt(5),
+                          global().successfulRequests().percent().gt(99.0)
+                  );
       } else if (TEST_TYPE == "RAMP_USERS") {
           setUp(TestPopulation.rampUsers).protocols(httpProtocol);
       } else if (TEST_TYPE == "COMPLEX_INJECTION") {
