@@ -3,13 +3,17 @@ package acetoys.simulation;
 import io.gatling.javaapi.core.Choice;
 import io.gatling.javaapi.core.ScenarioBuilder;
 
+import java.time.Duration;
+
 import static io.gatling.javaapi.core.CoreDsl.*;
 
 public class TestScenario {
 
+    private static final Duration TEST_DURATION = Duration.ofSeconds(Integer.parseInt(System.getProperty("DURATION", "60")));
+
     public static ScenarioBuilder defaultLoadTest =
             scenario("Default Load Test")
-                    .during(30)
+                    .during(TEST_DURATION)
                     .on(
                             randomSwitch()
                                     .on(
@@ -21,7 +25,7 @@ public class TestScenario {
 
     public static ScenarioBuilder highPurchaseLoadTest =
             scenario("High Purchase Load Test")
-                    .during(30)
+                    .during(TEST_DURATION)
                     .on(
                             randomSwitch()
                                     .on(
